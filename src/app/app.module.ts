@@ -11,6 +11,11 @@ import { HomePageComponent } from './pages/home-page/home-page.component'
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { ContactEditPageComponent } from './pages/contact-edit-page/contact-edit-page.component';
 import { ContactDetailsPageComponent } from './pages/contact-details-page/contact-details-page.component';
+import { UserService } from './services/user.service'
+import { ContactService } from './services/contact.service'
+import { BitcoinService } from './services/bitcoin.service'
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +23,7 @@ import { ContactDetailsPageComponent } from './pages/contact-details-page/contac
     ContactPreviewComponent,
     ContactListComponent,
     ChartComponent,
-    ContactFilterComponent
+    ContactFilterComponent,
     HomePageComponent,
     ContactPageComponent,
     ContactEditPageComponent,
@@ -26,9 +31,10 @@ import { ContactDetailsPageComponent } from './pages/contact-details-page/contac
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ContactService, UserService, BitcoinService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

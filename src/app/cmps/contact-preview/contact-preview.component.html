@@ -1,1 +1,3 @@
-<p>contact-preview works!</p>
+{{val.name}}
+<button (click)="goToContactDetails(val._id)">Go to Details</button>
+<img src="https://robohash.org/{{val.name}}.png" style="width: 50px">

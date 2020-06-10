@@ -1,0 +1,15 @@
+.main-home-container {
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 2em;
+  background-color: lightblue;
+  width: 90vw;
+}
+
+.main-home-container>* {
+  margin: 0 auto;
+  width: 30vw;
+  margin-bottom: 5px;
+  text-align: center;
+
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserService } from 'src/app/services/user.service';
+import { BitcoinService } from 'src/app/services/bitcoin.service'
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  users = [];
+  transactions = ''
+  bitCoinRate = ''
+  marketPrice = ''
+  constructor(private userService: UserService, private bitcoinService: BitcoinService) { }
 
-  ngOnInit(): void {
+
+
+  async ngOnInit() {
+    this.users = await this.userService.getUser()
+    this.bitCoinRate = await this.bitcoinService.getRate(5)
+    this.transactions = await this.bitcoinService.getConfirmedTransactions(5)
+    // this.marketPrice = await this.bitcoinService.getMarketPrice(5)
+
   }
 
 }

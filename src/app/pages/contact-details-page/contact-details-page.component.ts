@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-contact-details-page',
+  selector: 'contact-details-page',
   templateUrl: './contact-details-page.component.html',
   styleUrls: ['./contact-details-page.component.css']
 })
 export class ContactDetailsPageComponent implements OnInit {
+  contact;
+  @Input() currContact;
+
+
+
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.contact = this.currContact
   }
 
+
+  goBack() {
+    console.log('yay')
+
+  }
 }
